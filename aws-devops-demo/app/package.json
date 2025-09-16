@@ -1,22 +1,13 @@
 {
-  "name": "aws-devops-demo-app",
+  "name": "aws-devops-demo",
   "version": "1.0.0",
-  "description": "Sample Node.js Express app for AWS DevOps demo",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"OK\""
+    "test": "echo \"No tests yet\" && exit 0"
   },
-  "keywords": [
-    "aws",
-    "devops",
-    "express",
-    "demo"
-  ],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.18.2"
   }
 }
 
