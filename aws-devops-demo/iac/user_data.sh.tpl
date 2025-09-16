@@ -12,16 +12,16 @@ npm install -g pm2
 APP_DIR=/opt/aws-devops-demo/app
 mkdir -p "$APP_DIR"
 
-if [ ! -d "$APP_DIR/.git" ]; then
+if [ ! -d "$APP_DIR/node_modules" ]; then
   git clone ${REPO_URL} /opt/aws-devops-demo/repo
-  rsync -a /opt/aws-devops-demo/repo/aws-devops-demo/app/ "$APP_DIR"/
+  cp -r /opt/aws-devops-demo/repo/aws-devops-demo/app/* "$APP_DIR"/
 fi
 
 cd "$APP_DIR"
 npm install --omit=dev || true
 
 pm2 delete aws-devops-demo || true
-pm2 start index.js --name aws-devops-demo --update-env --env-production
+PORT=3000 pm2 start index.js --name aws-devops-demo --update-env --env-production
 pm2 save || true
 pm2 startup systemd -u ubuntu --hp /home/ubuntu || true
 
