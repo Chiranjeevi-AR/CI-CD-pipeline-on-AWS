@@ -47,18 +47,32 @@ jobs:
       - name: Verify AWS identity
         run: aws sts get-caller-identity
 
+      - name: Verify EC2 key pair exists in ap-south-1
+        run: |
+          aws ec2 describe-key-pairs \
+            --key-names "${{ secrets.AWS_KEY_PAIR_NAME }}" \
+            --region ap-south-1 \
+            --output json > /tmp/keypair.json
+          cat /tmp/keypair.json
+
       - name: Terraform Init
-        run: terraform init -input=false
+        run: terraform init -input=false -no-color
 
       - name: Terraform Validate
-        run: terraform validate
+        run: terraform validate -no-color
 
-      - name: Terraform Apply
+      - name: Terraform Plan
         run: |
-          terraform apply -input=false -auto-approve \
+          terraform plan -input=false -no-color -out=tfplan \
             -var "repo_url=https://github.com/${{ github.repository }}.git" \
             -var "key_name=${{ secrets.AWS_KEY_PAIR_NAME }}" \
             -var "aws_region=ap-south-1"
+
+      - name: Show Plan (debug)
+        run: terraform show -no-color tfplan
+
+      - name: Terraform Apply
+        run: terraform apply -input=false -no-color -auto-approve tfplan
 
 
 
