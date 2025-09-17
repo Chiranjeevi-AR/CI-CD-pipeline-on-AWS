@@ -5,53 +5,19 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update -y
 apt-get upgrade -y
 
+# Install Node.js and git
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
-apt-get install -y nodejs git unzip
-npm install -g pm2
+apt-get install -y nodejs git
 
-APP_DIR=/opt/aws-devops-demo/app
-mkdir -p "$APP_DIR"
+# Clone the repository
+cd /home/ubuntu
+git clone ${REPO_URL} app-repo
 
-cd "$APP_DIR"
+# Navigate to app directory and install dependencies
+cd /home/ubuntu/app-repo/aws-devops-demo/app
+npm install
 
-cat > index.js <<'EOF'
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.get('/', (req, res) => {
-  res.send('Hello from AWS DevOps Pipeline 🚀');
-});
-
-app.get('/health', (_req, res) => {
-  res.status(200).send('OK');
-});
-
-app.listen(PORT, () => {
-  console.log(`App running on http://localhost:${PORT}`);
-});
-EOF
-
-cat > package.json <<'EOF'
-{
-  "name": "aws-devops-demo",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"No tests yet\" && exit 0"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  }
-}
-EOF
-
-npm install --omit=dev || true
-
-pm2 delete aws-devops-demo || true
-PORT=3000 pm2 start index.js --name aws-devops-demo --update-env --env-production
-pm2 save || true
-pm2 startup systemd -u ubuntu --hp /home/ubuntu || true
+# Start the app with nohup and log to /var/log/app.log
+nohup npm start > /var/log/app.log 2>&1 &
 
 
