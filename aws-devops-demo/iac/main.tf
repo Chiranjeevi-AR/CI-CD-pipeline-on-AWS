@@ -5,6 +5,10 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 5.0"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = ">= 3.0"
+    }
   }
 }
 
@@ -39,8 +43,13 @@ data "aws_ami" "ubuntu_2204" {
   }
 }
 
+# Generate random suffix for unique naming
+resource "random_id" "sg_suffix" {
+  byte_length = 4
+}
+
 resource "aws_security_group" "app_sg" {
-  name        = "aws-devops-demo-sg"
+  name        = "aws-devops-demo-sg-${random_id.sg_suffix.hex}"
   description = "Allow SSH and app port"
   vpc_id      = data.aws_vpc.default.id
 
@@ -86,7 +95,9 @@ resource "aws_instance" "app" {
   user_data = local.user_data
 
   tags = {
-    Name = "aws-devops-demo-app"
+    Name = "aws-devops-demo-app-${random_id.sg_suffix.hex}"
+    Project = "aws-devops-demo"
+    Environment = "production"
   }
 }
 
