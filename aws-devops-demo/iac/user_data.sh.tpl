@@ -30,6 +30,7 @@ chown -R ubuntu:ubuntu /home/ubuntu/app-repo
 
 # Navigate to app directory and install dependencies
 cd /home/ubuntu/app-repo/aws-devops-demo/app
+echo "Current directory: $(pwd)"
 echo "Installing npm dependencies..."
 sudo -u ubuntu npm install
 
@@ -38,6 +39,14 @@ echo "Checking application files:"
 ls -la
 ls -la views/ || echo "Views directory not found"
 ls -la public/ || echo "Public directory not found"
+
+# Verify this is the portfolio app by checking for portfolio content
+if grep -q "Chiranjeevi A R" views/home.html 2>/dev/null; then
+    echo "✅ Portfolio application detected - proceeding with deployment"
+else
+    echo "❌ Portfolio application not found - stopping deployment"
+    exit 1
+fi
 
 # Stop any existing pm2 processes
 sudo -u ubuntu pm2 delete all || true
