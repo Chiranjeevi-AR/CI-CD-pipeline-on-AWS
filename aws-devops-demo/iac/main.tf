@@ -96,6 +96,7 @@ resource "aws_security_group" "app_sg" {
 locals {
   user_data = templatefile("${path.module}/user_data.sh.tpl", {
     REPO_URL = var.repo_url
+    PORT     = 3000
   })
 }
 
