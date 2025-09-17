@@ -5,41 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - Chiranjeevi A R</title>
     <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/projects">Projects</a>
-            <a href="/contact">Contact</a>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2>Chiranjeevi A R</h2>
+            </div>
+            <nav class="nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/projects" class="nav-link">Projects</a>
+                <a href="/contact" class="nav-link active">Contact</a>
+            </nav>
+        </div>
     </header>
     
-    <main>
-        <section>
-            <h1>Contact Me</h1>
-            
-            <div class="contact-info">
-                <p>I'm always interested in discussing new opportunities, collaborations, or just having a chat about technology and DevOps!</p>
+    <main class="main">
+        <section class="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
                 
-                <div class="contact-methods">
-                    <div class="contact-item">
-                        <h3>📧 Email</h3>
-                        <p>chiranjeevi.ar@example.com</p>
+                <div class="contact-info">
+                    <p class="contact-intro">I'm always excited to discuss new opportunities, collaborations, or just have a conversation about DevOps, cloud technologies, and automation. Feel free to reach out!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-item-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+919108744270">+91 9108744270</a></p>
+                            <span class="contact-desc">Available for calls</span>
+                        </div>
+                        
+                        <div class="contact-item-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:chiruayya.ar33@gmail.com">chiruayya.ar33@gmail.com</a></p>
+                            <span class="contact-desc">Best way to reach me</span>
+                        </div>
+                        
+                        <div class="contact-item-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/chiranjeevi-a-r-60089b37b/" target="_blank">Connect with me</a></p>
+                            <span class="contact-desc">Professional network</span>
+                        </div>
+                        
+                        <div class="contact-item-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/Chiranjeevi-AR" target="_blank">View my projects</a></p>
+                            <span class="contact-desc">Code repository</span>
+                        </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <h3>💻 GitHub</h3>
-                        <p><a href="https://github.com/Chiranjeevi-AR" target="_blank">github.com/Chiranjeevi-AR</a></p>
+                    <div class="availability">
+                        <div class="availability-content">
+                            <h3><i class="fas fa-briefcase"></i> Current Status</h3>
+                            <p>Open to new opportunities in <strong>DevOps Engineering</strong>, <strong>Cloud Architecture</strong>, and <strong>Infrastructure Automation</strong>. Available for both full-time positions and freelance projects.</p>
+                            
+                            <div class="availability-tags">
+                                <span class="availability-tag">Full-time</span>
+                                <span class="availability-tag">Contract</span>
+                                <span class="availability-tag">Remote</span>
+                                <span class="availability-tag">On-site</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <h3>💼 LinkedIn</h3>
-                        <p><a href="https://www.linkedin.com/in/chiranjeevi-a-r-60089b37b/" target="_blank">linkedin.com/in/chiranjeevi-a-r-60089b37b/</a></p>
+                    <div class="contact-cta">
+                        <h3>Ready to collaborate?</h3>
+                        <p>Whether you're looking for a DevOps engineer, need help with cloud infrastructure, or want to discuss exciting technology projects, I'd love to hear from you!</p>
+                        <div class="cta-buttons">
+                            <a href="mailto:chiruayya.ar33@gmail.com" class="cta-button primary">
+                                <i class="fas fa-paper-plane"></i> Send Email
+                            </a>
+                            <a href="tel:+919108744270" class="cta-button secondary">
+                                <i class="fas fa-phone"></i> Call Me
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
-                <p class="availability">Available for freelance projects and full-time opportunities in DevOps, Cloud Engineering, and Infrastructure Automation.</p>
             </div>
         </section>
     </main>

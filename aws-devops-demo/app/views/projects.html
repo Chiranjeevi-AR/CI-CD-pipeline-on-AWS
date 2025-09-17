@@ -5,39 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects - Chiranjeevi A R</title>
     <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/projects">Projects</a>
-            <a href="/contact">Contact</a>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2>Chiranjeevi A R</h2>
+            </div>
+            <nav class="nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/projects" class="nav-link active">Projects</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
     </header>
     
-    <main>
-        <section>
-            <h1>My Projects</h1>
-            
-            <div class="project-list">
-                <div class="project-item">
-                    <h3>🚗 GPS GSM Vehicle Tracker</h3>
-                    <p>Real-time vehicle tracking system using GPS and GSM modules for fleet management and security applications.</p>
+    <main class="main">
+        <section class="projects">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                
+                <div class="project-list">
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h3><i class="fas fa-server"></i> Three-Tier AWS Cloud Application</h3>
+                            <div class="tech-stack">
+                                <span class="tech-tag">AWS EC2</span>
+                                <span class="tech-tag">RDS</span>
+                                <span class="tech-tag">S3</span>
+                            </div>
+                        </div>
+                        <p>Developed a highly scalable web application using AWS EC2 (app), RDS (database), and S3 (storage). Implemented a fully automated CI/CD pipeline with Jenkins. Configured Load Balancer and Security Groups for high availability and enhanced security. Optimized performance using caching and multi-zone architecture.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h3><i class="fas fa-code-branch"></i> DevOps Automation Project</h3>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Jenkins</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">GitHub</span>
+                            </div>
+                        </div>
+                        <p>Built a complete CI/CD workflow for a Python web application (Netflix clone) using Jenkins, Docker, and GitHub. Automated unit tests, containerization, and deployment using EC2, ECS, and Docker. Monitored app health using Linux scripts and AWS CloudWatch.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h3><i class="fas fa-database"></i> Full-Stack Internship Management System</h3>
+                            <div class="tech-stack">
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                            </div>
+                        </div>
+                        <p>Developed a full-stack internship management platform using MongoDB, Express.js, React.js, and Node.js. Implemented role-based access, dynamic UI, and real-time notifications for students and admins. Ensured secure data handling, responsive UI, and optimized database queries.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h3><i class="fas fa-radar-chart"></i> DRDO Antenna Signal Processing</h3>
+                            <div class="tech-stack">
+                                <span class="tech-tag">MATLAB</span>
+                                <span class="tech-tag">Signal Processing</span>
+                                <span class="tech-tag">Radar Systems</span>
+                            </div>
+                        </div>
+                        <p>Developed a full-stack internship management platform using MongoDB, Express.js, React.js, and Node.js. Implemented role-based access, dynamic UI, and real-time notifications for students and admins. Successfully deployed the platform with AWS CI/CD automation.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Research Paper</a>
+                            <a href="#" class="project-link"><i class="fas fa-chart-line"></i> Results</a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="project-item">
-                    <h3>🤖 Obstacle Avoiding Robot</h3>
-                    <p>Autonomous robot with ultrasonic sensors for navigation and obstacle detection using Arduino and motor control systems.</p>
-                </div>
-                
-                <div class="project-item">
-                    <h3>📡 DRDO Antenna Processing</h3>
-                    <p>Signal processing system for antenna arrays developed in collaboration with DRDO for defense applications.</p>
-                </div>
-                
-                <div class="project-item">
-                    <h3>💼 Internship Management System (MERN)</h3>
-                    <p>Full-stack web application built with MongoDB, Express.js, React, and Node.js for managing internship programs and student placements.</p>
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>4+</h3>
+                        <p>Major Projects</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-code"></i>
+                        <h3>10+</h3>
+                        <p>Technologies</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-cloud"></i>
+                        <h3>AWS</h3>
+                        <p>Cloud Expert</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-cogs"></i>
+                        <h3>DevOps</h3>
+                        <p>Automation</p>
+                    </div>
                 </div>
             </div>
         </section>
